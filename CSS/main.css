@@ -1,7 +1,16 @@
+@import url("responsive.css");
+
 *{
     margin: 0px;
     padding: 0px;
     font-family: sans-serif;
+}
+
+:root {
+    --pad: 10px;
+    --colorMain: rgb(254, 254, 254);
+    --colorSecond: rgb(220, 220, 220);
+    --linerGrad: linear-gradient(135deg, var(--colorMain) 0%, var(--colorSecond) 100%);
 }
 
 body {
@@ -13,34 +22,35 @@ body {
 }
 
 #main-container {
-    width: 50%;
-    margin: auto;
-    height: 60%;
-    padding: 30px;
+    min-width: 80%; 
+    height: auto;
+    padding: 15px;
     border: solid 1px #ccc;
+    grid-gap: 5px;
     border-radius: 10px;
     display: grid;
+    grid-template-rows: 40% 40% 20%;
 }
 
-#ubication {
+#name-location {
     text-align: center;
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-size: 25px;
-}
-
-#container-two, #container-one, #container-tree {
-    width: 80%;
-    margin: auto;
+    font-weight: 500;
+    font-size: 18px;
 }
 
 /*Dising box one*/
 #container-one {
     display: grid;
+    padding: 15px;
+    width: 90%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6, 1fr);
     text-align: center;
     grid-gap: 5px;
+    border-radius: var(--pad);
+    background-image: var(--linerGrad);
+    animation: fors 2.5s ease infinite alternate;
+    background-size: 200% 200%;
 }
 
 #title-temp, #temp {
@@ -48,12 +58,19 @@ body {
     text-align: center;
 }
 
+#temp {
+    border-bottom: solid 1px #ccc;
+}
+
 #title-temp-min {
     grid-column: 1/2;
+    
+    border-right: solid 1px #ccc;
 }
 
 #temp-min {
     grid-column: 1/2;
+    border-right: solid 1px #ccc; 
 }
 
 #temp-max, #title-temp-max{
@@ -68,6 +85,11 @@ body {
     grid-row: 4/5;
 }
 
+#title-humidity {
+    border-top: solid 1px #ccc;
+    padding-top: 3px;
+}
+
 #title-humidity, #humidity {
     grid-column: 1/3;
 }
@@ -76,7 +98,13 @@ body {
 
 #container-two {
     display: grid;
+    padding: 15px;
+    width: 90%;
+    border-radius: var(--pad);
     grid-template-rows: 20% 60% 20%;
+    background-image: var(--linerGrad);
+    animation: fors 2.5s ease infinite alternate;
+    background-size: 200% 200%;
 }
 
 #name-location {
@@ -85,7 +113,7 @@ body {
 }
 
 #icon-view {
-    width: 50%;
+    width: 100%;
     justify-self: center;
     align-self: center;
 }
@@ -99,6 +127,48 @@ body {
 /*Dising box two*/ 
 
 #container-tree {
+    padding: 15px;
     display: grid;
+    width: 90%;
+    border-radius: var(--pad);
     text-align: center;
+    background-image: var(--linerGrad);
+    animation: fors 2.5s ease infinite alternate;
+    background-size: 200% 200%;
+}
+
+#container-air {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+#air {
+    grid-column: 3/4;
+    width: 50%;
+}
+
+#speed-air {
+    grid-column: 1/3;
+}
+
+.title-dising {
+    font-weight: 500;    
+    font-size: 16px;
+}
+
+.values-text {
+    color: rgb(69, 69, 69);
+    font-weight: 200;
+    font-size: 15px;
+}
+
+
+/*Animations*/
+
+@keyframes fors {
+    0%{background-position:0% 2%}
+    50%{background-position:50% 55%}
+    100%{background-position:100% 99%}
 }

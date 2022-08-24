@@ -4,9 +4,9 @@ window.addEventListener("load", () => {
             lat = position.coords.latitude;
             lon = position.coords.longitude;
             key = "0de97a5ffc979248b4a69aa8aabbaf13";
-            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`;
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric&lang=es`;
             getData(url);
-            console.log(url)
+            console.log(url);
         })
     }
 })
@@ -14,9 +14,9 @@ window.addEventListener("load", () => {
 
 const getData = async (direction) => {
     request = await axios(direction);
-    let temperature = request.data.main.temp;//Temperature
-    let temperatureMin = request.data.main.temp_min;//Temperature min
-    let temperatureMax = request.data.main.temp_max;//Temperature max
+    let temperature = Math.floor(request.data.main.temp);//Temperature
+    let temperatureMin = Math.floor(request.data.main.temp_min);//Temperature min
+    let temperatureMax = Math.floor(request.data.main.temp_max);//Temperature max
     let descriptionTemp = request.data.weather[0].description;//Description to status weather
     let nameCity = request.data.name;//Name of city location
     let nameContry = request.data.sys.country;//Name of country location
@@ -37,5 +37,43 @@ const getData = async (direction) => {
     itemTempMin.innerHTML = `${temperatureMin} °C`;
     itemTempMax.innerHTML = `${temperatureMax} °C`;
     itemSpeedAir.innerHTML = `${speedAir} m/s`;
-    itemHumidity.innerHTML = `${humidity} %`; 
+    itemHumidity.innerHTML = `${humidity}%`;
+    insertImgSvg(); 
+}
+
+const insertImgSvg = () => {
+    let itemIcon = document.getElementById("icon-view");
+    switch (request.data.weather[0].main) {
+        case 'Thunderstorm':
+            itemIcon.src='SVG/thunder.svg'
+            console.log('TORMENTA');
+            break;
+        case 'Drizzle':
+            itemIcon.src='SVG/rainy-2.svg'
+            console.log('LLOVIZNA');
+            break;
+        case 'Rain':
+            itemIcon.src='SVG/rainy-7.svg'
+            console.log('LLUVIA');
+            break;
+        case 'Snow':
+            itemIcon.src='SVG/snowy-6.svg'
+            console.log('NIEVE');
+            break;                        
+        case 'Clear':
+            itemIcon.src='SVG/day.svg'
+            console.log('LIMPIO');
+            break;
+        case 'Atmosphere':
+            itemIcon.src='SVG/weather.svg'
+            console.log('ATMOSFERA');
+            break;  
+        case 'Clouds':
+            itemIcon.src='SVG/cloudy-day-1.svg'
+            console.log('NUBES');
+            break;  
+        default:
+            itemIcon.src='SVG/cloudy-day-1.svg'
+            console.log('por defecto');
+    }
 }

@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="google" content="notranslate"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación del clima</title>
+    <title>Clima actual</title>
     <link rel="stylesheet" href="CSS/main.css" type="text/css">
+    <link rel="icon" href="ICONS/icon.png">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div id="main-container">
         <div id="container-two">
-            <p id="name-location"></p>
-            <img src="ICONS/icon.png" alt="" id="icon-view">
-            <p id="temp-desc"></p>
+            <div id="name-location"></div>
+            <img src="" alt="" id="icon-view">
+            <div id="temp-desc" class="values-text"></div>
         </div>
         <div id="container-one">
-                <div id="title-temp">Temperatura actual</div>
-                <div id="temp"></div>
-                <div id="title-temp-min">Min.</div>
-                <div id="temp-min"></div>
-                <div id="title-temp-max">Max.</div>
-                <div id="temp-max"></div>
-                <div id="title-humidity">Humedad</div>
-                <div id="humidity"></div>
+                <div id="title-temp" class="title-dising">Temperatura actual</div>
+                <div id="temp" class="values-text"></div>
+                <div id="title-temp-min" class="title-dising">Min.</div>
+                <div id="temp-min" class="values-text"></div>
+                <div id="title-temp-max" class="title-dising">Max.</div>
+                <div id="temp-max" class="values-text"></div>
+                <div id="title-humidity" class="title-dising">Humedad</div>
+                <div id="humidity" class="values-text"></div>
         </div>
         <div id="container-tree">
-            <p>Velocidad del viento</p>
-            <p id="speed-air"></p>
+            <div class="title-dising">Velocidad del viento</div>
+            <div id="container-air">
+                <div id="speed-air" class="values-text"></div>
+                <img src="SVG/speedAir.svg" alt="" id="air">
+            </div>
         </div>
     </div>
     <script src="JS/main.js"></script>
