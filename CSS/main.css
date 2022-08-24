@@ -25,11 +25,12 @@ body {
     min-width: 80%; 
     height: auto;
     padding: 15px;
-    border: solid 1px #ccc;
     grid-gap: 5px;
     border-radius: 10px;
     display: grid;
     grid-template-rows: 40% 40% 20%;
+    justify-content: center;
+    border: #ccc solid 0.5px;
 }
 
 #name-location {
@@ -42,7 +43,7 @@ body {
 #container-one {
     display: grid;
     padding: 15px;
-    width: 90%;
+    width: auto;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6, 1fr);
     text-align: center;
@@ -99,7 +100,7 @@ body {
 #container-two {
     display: grid;
     padding: 15px;
-    width: 90%;
+    width: auto;
     border-radius: var(--pad);
     grid-template-rows: 20% 60% 20%;
     background-image: var(--linerGrad);
@@ -129,7 +130,7 @@ body {
 #container-tree {
     padding: 15px;
     display: grid;
-    width: 90%;
+    width: auto;
     border-radius: var(--pad);
     text-align: center;
     background-image: var(--linerGrad);
