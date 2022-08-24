@@ -1,5 +1,3 @@
 @media (max-width: 450px){
-    #main-container {
-        width: 90% !important; 
-    }
+    #main-container { width: 90% !important; }
 }

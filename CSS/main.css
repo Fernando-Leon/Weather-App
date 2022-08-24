@@ -31,6 +31,7 @@ body {
     grid-template-rows: 40% 40% 20%;
     justify-content: center;
     border: #ccc solid 0.5px;
+    text-align: center;
 }
 
 #name-location {
@@ -46,7 +47,6 @@ body {
     width: auto;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6, 1fr);
-    text-align: center;
     grid-gap: 5px;
     border-radius: var(--pad);
     background-image: var(--linerGrad);
@@ -54,49 +54,23 @@ body {
     background-size: 200% 200%;
 }
 
-#title-temp, #temp {
-    grid-column: 1/3;
-    text-align: center;
-}
-
-#temp {
-    border-bottom: solid 1px #ccc;
-}
-
-#title-temp-min {
+#title-temp-min, #temp-min {
     grid-column: 1/2;
-    
     border-right: solid 1px #ccc;
 }
-
-#temp-min {
-    grid-column: 1/2;
-    border-right: solid 1px #ccc; 
-}
-
-#temp-max, #title-temp-max{
-    grid-column: 2/3;
-}
-
-#title-temp-max {
-    grid-row: 3/4;
-}
-
-#temp-max {
-    grid-row: 4/5;
-}
+#title-temp, #temp { grid-column: 1/3; }
+#temp { border-bottom: solid 1px #ccc; }
+#temp-max, #title-temp-max{ grid-column: 2/3; }
+#title-temp-max { grid-row: 3/4; }
+#temp-max { grid-row: 4/5; }
+#title-humidity, #humidity { grid-column: 1/3; }
 
 #title-humidity {
     border-top: solid 1px #ccc;
     padding-top: 3px;
 }
 
-#title-humidity, #humidity {
-    grid-column: 1/3;
-}
-
 /*Dising box two*/
-
 #container-two {
     display: grid;
     padding: 15px;
@@ -106,33 +80,18 @@ body {
     background-image: var(--linerGrad);
     animation: fors 2.5s ease infinite alternate;
     background-size: 200% 200%;
+    justify-content: center;
+    align-items: center;
 }
 
-#name-location {
-    text-align: center;
-    justify-self: center;
-}
-
-#icon-view {
-    width: 100%;
-    justify-self: center;
-    align-self: center;
-}
-
-#temp-desc {
-    text-align: center;
-    align-self: center;
-    justify-self: center;
-}
+#icon-view { width: 100%; }
 
 /*Dising box two*/ 
-
 #container-tree {
     padding: 15px;
     display: grid;
     width: auto;
     border-radius: var(--pad);
-    text-align: center;
     background-image: var(--linerGrad);
     animation: fors 2.5s ease infinite alternate;
     background-size: 200% 200%;
@@ -150,9 +109,7 @@ body {
     width: 50%;
 }
 
-#speed-air {
-    grid-column: 1/3;
-}
+#speed-air { grid-column: 1/3; }
 
 .title-dising {
     font-weight: 500;    
@@ -165,9 +122,7 @@ body {
     font-size: 15px;
 }
 
-
 /*Animations*/
-
 @keyframes fors {
     0%{background-position:0% 2%}
     50%{background-position:50% 55%}
